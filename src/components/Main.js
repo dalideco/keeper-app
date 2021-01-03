@@ -8,12 +8,16 @@ function Main(props) {
     return (
         <div className ="main">
             <Myform/>
-            {props.database.map(a=> 
-                <Block
-                    key = {a.id}
-                    header = {a.header}
-                    description= {a.description}
-                />)}
+            <div className="mygrid">
+                {props.database.map(a=> 
+                    <Block
+                        key = {a.id}
+                        header = {a.header}
+                        description= {a.description}
+                    />)}
+
+            </div>
+            
         </div>
     )
 }

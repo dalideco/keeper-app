@@ -1,9 +1,16 @@
 import React from 'react'
+import './Myform.scss'
 
 function Myform() {
     return (
-        <div style={{display:'block'}}>
-            hellow
+        <div className ="myform">
+            <form>
+                <input name="title" placeholder="title">
+                </input>
+                <textarea name="content" placeholder="content">
+                </textarea>
+                <button>Add</button>
+            </form>
         </div>
     )
 }
