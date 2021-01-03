@@ -1,0 +1,19 @@
+$navbar-color:#C34A36;
+$body-background: #BEA6A0;
+$document-background: #B0A8B9;
+$block-color: #845EC2 ;
+$logo-color: #B0A8B9;
+$navbar-height: 80px;
+
+
+@mixin size($width,$height){
+    width: $width;
+    height: $height;
+}
+
+@mixin flexer($direction, $justify,$align){
+    display:flex;
+    flex-direction: $direction; 
+    justify-content: $justify;
+    align-items: $align;
+}
