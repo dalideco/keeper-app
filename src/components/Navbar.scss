@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
 .navbar{
-    @include size(100%,80px);
+    @include size(100%,$navbar-height);
     background :$navbar-color;
     color : $logo-color;
     align-items:center;
