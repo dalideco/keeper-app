@@ -1,26 +1,35 @@
 import React,{useState} from 'react'
 import './Myform.scss'
 
-function Myform() {
-    const [title, setTitle]=useState("");
-    const [content , setContent]= useState("");
+function Myform(props) {
+    const [input, setInput]=useState({
+        title: "",
+        content:""
+    });
 
-    const changeTitle= (e)=>{
-        setTitle(e.target.value);
+    const handleChange= (e)=>{
+        setInput((prev)=>{
+            return {
+                ...prev, 
+                [e.target.name]:e.target.value
+            }
+        }
+        )
     }
+    const addToDatabase=(e)=>{
+        e.preventDefault();
+        props.addToDatabase(input);
 
-    const changeContent= (e)=>{
-        setContent(e.target.value);
     }
 
     return (
         <div className ="myform">
             <form>
-                <input name="title" placeholder="title" value={title} onChange={changeTitle}>
+                <input name="title" placeholder="title" value={input.title} onChange={handleChange}>
                 </input>
-                <textarea name="content" placeholder="content" value={content} onChange={changeContent}>
+                <textarea name="content" placeholder="content" value={input.content} onChange={handleChange}>
                 </textarea>
-                <button>Add</button>
+                <button onClick={addToDatabase}>Add</button>
             </form>
         </div>
     )

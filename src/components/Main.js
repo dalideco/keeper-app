@@ -7,7 +7,7 @@ function Main(props) {
 
     return (
         <div className ="main">
-            <Myform/>
+            <Myform addToDatabase={props.addToDatabase}/>
             <div className="mygrid">
                 {props.database.map(a=> 
                     <Block

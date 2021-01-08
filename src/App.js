@@ -7,16 +7,21 @@ function App() {
 
   var [database,setdatabase] = useState([]);
 
-  function adding(){
-    setdatabase(old=>{
-      return [...old, {id:54,header:"dali",description:"dalideco"}];
-    });
+  const addToDatabase =(input)=>{
+    setdatabase((prev)=>{
+      return[...prev,{
+        id:prev.length,
+        title:input.title,
+        content:input.content
+      }]
+    }
+    );
   }
 
   return (
     <div className="App">
-      <Navbar database={database} itsfunction={adding}/>
-      <Main database={database}/>
+      <Navbar database={database} />
+      <Main database={database} addToDatabase={addToDatabase}/>
     </div>
   );
 }
