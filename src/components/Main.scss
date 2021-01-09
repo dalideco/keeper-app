@@ -4,14 +4,26 @@
     width: 90%;
     margin:20px auto;
     position: relative;
+    display:flex;
+    flex-direction:column;
 
     .mygrid{
         width: 100%;
         margin:auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(250px,300px));
         grid-gap:10px;
     }
-    
 
+}
+
+@media(max-width: 700px){
+    .main{
+        .mygrid{
+            display:flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+        }
+    }
 }

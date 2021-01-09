@@ -8,13 +8,12 @@ function App() {
   var [database,setdatabase] = useState([]);
 
   const addToDatabase =(input)=>{
-    setdatabase((prev)=>{
-      return[...prev,{
-        id:prev.length,
-        title:input.title,
+    setdatabase((prev)=>[...prev,
+      {
+        id: input.length,
+        title: input.title,
         content:input.content
       }]
-    }
     );
   }
 

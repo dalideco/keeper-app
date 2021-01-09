@@ -12,8 +12,8 @@ function Main(props) {
                 {props.database.map(a=> 
                     <Block
                         key = {a.id}
-                        header = {a.header}
-                        description= {a.description}
+                        title = {a.title}
+                        content= {a.content}
                     />)}
 
             </div>
