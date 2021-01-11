@@ -10,17 +10,24 @@ function App() {
   const addToDatabase =(input)=>{
     setdatabase((prev)=>[...prev,
       {
-        id: input.length,
+        id: database.length,
         title: input.title,
         content:input.content
       }]
     );
   }
 
+  const removingFromdatabase= (id)=>{
+    setdatabase((prev)=>{
+      return prev.filter((elem)=>elem.id !== id)
+    });
+  }
+
   return (
     <div className="App">
       <Navbar database={database} />
-      <Main database={database} addToDatabase={addToDatabase}/>
+      <Main database={database} addToDatabase={addToDatabase}
+        removingFromdatabase={removingFromdatabase}/>
     </div>
   );
 }
