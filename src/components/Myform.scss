@@ -4,25 +4,27 @@
     position: relative;
     @include size(100%, 200px);
     margin-bottom: 50px;
+    margin-top: 100px;
     form{
         height: 100%;
         max-width: 700px;
         margin:auto;
         @include flexer(column, flex-start, center);
-        border : solid black 2px;
-        border-radius:30px;
+        @include shadowed();
+        border-radius:10px;
         background: $block-color;
         position: relative;
         input{
             flex:0.5;
             border: none;
             background:none;
-            font-weight: 700;
-            font-size: 1.5rem;
             width:90%;
             &:focus{
                 outline:none;
             }
+            font-family: 'Yellowtail', cursive;
+            font-weight: 700;
+            font-size : 50px;
         }
         textarea{
             font-size: 1.2rem;
@@ -43,7 +45,8 @@
             bottom:-25px;
             background: $navbar-color;
             color : $logo-color;
-            font-weight: 700;
+            @include shadowed();
+            @include flexer(column,center,center);
             &:focus{
                 outline :none;
             }

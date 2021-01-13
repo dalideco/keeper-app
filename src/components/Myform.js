@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './Myform.scss'
+import AddIcon from '@material-ui/icons/Add';
 
 function Myform(props) {
     const [input, setInput]=useState({
@@ -29,7 +30,9 @@ function Myform(props) {
                 </input>
                 <textarea name="content" placeholder="content" value={input.content} onChange={handleChange}>
                 </textarea>
-                <button onClick={addToDatabase}>Add</button>
+                <button onClick={addToDatabase}>
+                    <AddIcon />
+                </button>
             </form>
         </div>
     )

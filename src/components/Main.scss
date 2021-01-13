@@ -2,10 +2,11 @@
 
 .main{
     width: 90%;
-    margin:20px auto;
+    margin:0 auto;
     position: relative;
     display:flex;
     flex-direction:column;
+    z-index: 1;
 
     .mygrid{
         width: 100%;
