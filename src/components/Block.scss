@@ -1,5 +1,6 @@
 @import '_variables';
 .block{
+    position: relative;
     width: 100%;
     min-height: 150px;
     max-width:300px;
@@ -8,6 +9,16 @@
     padding: 20px;
     color: $logo-color;
     @include shadowed();
+    
+    form{
+        min-height:150px;
+        @include flexer(column, flex-start ,stretch);
+        .deleteLine{
+            margin-top:auto ;
+            align-self:flex-end;
+        }
+    }
+    
 }
 
 h1{
