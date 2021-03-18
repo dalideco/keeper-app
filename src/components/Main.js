@@ -16,6 +16,7 @@ function Main(props) {
                         title = {a.title}
                         content= {a.content}
                         removingFromdatabase={props.removingFromdatabase}
+                        database ={props.database}
                     />)}
 
             </div>

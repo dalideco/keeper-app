@@ -1,8 +1,9 @@
-import React from 'react';
+import axios from 'axios';
+import React,{useState,useEffect} from 'react';
 import './Navbar.scss';
 
 function Navbar(props) {
-
+    const [weather,setWeather]= useState("not yet gotten");
     return (
         <div className ="navbar">
             <div>
