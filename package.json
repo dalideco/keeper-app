@@ -1,5 +1,6 @@
 {
   "name": "keeper",
+  "proxy":"http://localhost:5000",
   "homepage": "https://dalideco.github.io/keeper-app",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +15,7 @@
     "express": "^4.17.1",
     "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
+    "qs": "^6.10.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -24,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy":"gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

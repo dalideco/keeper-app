@@ -21,7 +21,7 @@ const sleep = (milliseconds) => {
 
 
 function Block(props) {
-    const [formSizes,setFormSizes] = useState({
+    const [formSizes] = useState({
         width: '100%',
         minHeight: '150px',
         maxWidth:'300px',

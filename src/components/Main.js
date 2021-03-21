@@ -11,8 +11,8 @@ function Main(props) {
             <div className="mygrid">
                 {props.database.map(a=> 
                     <Block
-                        key = {a.id}
-                        id={a.id}
+                        key = {a._id}
+                        id={a._id}
                         title = {a.title}
                         content= {a.content}
                         removingFromdatabase={props.removingFromdatabase}
