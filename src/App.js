@@ -5,27 +5,37 @@ import Main from './components/Main';
 import axios from 'axios'
 import qs from 'qs'
 
+function useForceUpdate(){
+  const [value,setValue] = useState(0);
+  return ()=> setValue(prev=>prev+1)
+}
+
 function App() {
 
   const [database,setdatabase] = useState([]);
-  const [change, setChange]=useState(true);
+  const forceUpdate = useForceUpdate();
+
 
   useEffect( ()=>{
      axios.get("/find").then(response=>{
-      setdatabase(prev=>response.data)
+      setdatabase(prev=>response.data);
     }).catch(
       err=> console.log(err)
     )
-  },[change])
+  })
 
   const addToDatabase =(input)=>{
-    axios.post("/add",qs.stringify(input));
-    setChange(!change)
+    axios.post("/add",qs.stringify(input)).then(response=>
+      forceUpdate()
+    ).catch(err=>console.log(err));
+    
   }
 
   const removingFromdatabase= (id)=>{
-    axios.post("/remove",qs.stringify({_id: id}));
-    setChange(!change)
+    axios.post("/remove",qs.stringify({_id: id})).then(response=>
+      forceUpdate()
+    ).catch(err=> console.log(err))
+    
   }
 
   return (

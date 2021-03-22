@@ -1,6 +1,6 @@
 {
   "name": "keeper",
-  "proxy":"http://localhost:5000",
+  "proxy":"https://keeper-app-dalideco.herokuapp.com",
   "homepage": "https://dalideco.github.io/keeper-app",
   "version": "0.1.0",
   "private": true,
