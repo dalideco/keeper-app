@@ -17,7 +17,7 @@ function App() {
 
 
   useEffect( ()=>{
-     axios.get("/find").then(response=>{
+     axios.get("https://keeper-app-dalideco.herokuapp.com/find").then(response=>{
       setdatabase(prev=>response.data);
     }).catch(
       err=> console.log(err)
@@ -25,14 +25,14 @@ function App() {
   })
 
   const addToDatabase =(input)=>{
-    axios.post("/add",qs.stringify(input)).then(response=>
+    axios.post("https://keeper-app-dalideco.herokuapp.com/add",qs.stringify(input)).then(response=>
       forceUpdate()
     ).catch(err=>console.log(err));
     
   }
 
   const removingFromdatabase= (id)=>{
-    axios.post("/remove",qs.stringify({_id: id})).then(response=>
+    axios.post("https://keeper-app-dalideco.herokuapp.com/remove",qs.stringify({_id: id})).then(response=>
       forceUpdate()
     ).catch(err=> console.log(err))
     
